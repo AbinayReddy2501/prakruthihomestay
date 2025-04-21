@@ -1,5 +1,5 @@
 [build]
-builder = "NIXPACKS"
+builder = "JAVA"
 buildCommand = "mvn clean package -DskipTests"
 
 [deploy]
@@ -13,10 +13,17 @@ SPRING_PROFILES_ACTIVE = "prod"
 PORT = "8080"
 
 [[phases.setup]]
-nixPkgs = ["maven", "openjdk-17-jdk"]
+nixPkgs = [
+    "maven",
+    "openjdk-17-jdk"
+]
+
+[[phases.install]]
+cmds = [
+    "mvn dependency:go-offline"
+]
 
 [[phases.build]]
-cmds = ["mvn clean package -DskipTests"]
-
-[[phases.deploy]]
-cmds = ["java -jar target/*.jar"]
+cmds = [
+    "mvn clean package -DskipTests"
+]
