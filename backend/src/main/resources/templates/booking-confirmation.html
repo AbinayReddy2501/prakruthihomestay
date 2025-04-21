@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: html}">
+<body>
+    <div th:fragment="content">
+        <h2>Booking Confirmation</h2>
+        <p>Dear <span th:text="${guestName}"></span>,</p>
+        
+        <p>Thank you for choosing Prakruthi Homestay. Your booking has been confirmed!</p>
+        
+        <div class="info-box">
+            <h3>Booking Details</h3>
+            <p><strong>Booking ID:</strong> <span th:text="${bookingId}"></span></p>
+            <p><strong>Room:</strong> <span th:text="${roomName}"></span></p>
+            <p><strong>Check-in:</strong> <span th:text="${checkInDate}"></span> at <span th:text="${checkInTime}"></span></p>
+            <p><strong>Check-out:</strong> <span th:text="${checkOutDate}"></span> at <span th:text="${checkOutTime}"></span></p>
+            <p><strong>Total Amount:</strong> ₹<span th:text="${totalAmount}"></span></p>
+        </div>
+
+        <div class="info-box">
+            <h3>Important Information</h3>
+            <ul>
+                <li>Please carry a valid government ID proof for check-in</li>
+                <li>Early check-in and late check-out are subject to availability</li>
+                <li>Free cancellation available up to 7 days before check-in</li>
+                <li>Free parking available on premises</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Location</h3>
+            <p>Prakruthi Homestay</p>
+            <p>[Your Full Address]</p>
+            <p>Contact: +91 98765 43210</p>
+        </div>
+
+        <p>For any queries or assistance, please don't hesitate to contact us.</p>
+        
+        <p>We look forward to hosting you!</p>
+        
+        <p>Best regards,<br>Team Prakruthi Homestay</p>
+    </div>
+</body>
+</html>

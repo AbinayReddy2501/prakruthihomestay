@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .logo-text { font-family: 'Times New Roman', serif; }
+    .tagline { font-family: 'Times New Roman', serif; font-style: italic; }
+    .primary-color { fill: #2E7D32; }
+  </style>
+  
+  <!-- Background arch -->
+  <path d="M100,150 
+           A250,250 0 0,1 500,150 
+           L500,400 
+           A250,250 0 0,1 100,400 Z" 
+        fill="none" 
+        stroke="#2E7D32" 
+        stroke-width="8"/>
+
+  <!-- Trees -->
+  <g class="primary-color">
+    <!-- Left tree -->
+    <path d="M150,250 
+             C150,180 200,150 250,250 Z"/>
+    <rect x="235" y="250" width="30" height="60"/>
+    
+    <!-- Right tree -->
+    <path d="M450,250 
+             C450,180 400,150 350,250 Z"/>
+    <rect x="335" y="250" width="30" height="60"/>
+  </g>
+
+  <!-- House -->
+  <g class="primary-color">
+    <!-- Roof -->
+    <path d="M250,200 L350,200 L300,150 Z"/>
+    <!-- Main structure -->
+    <rect x="260" y="200" width="80" height="80"/>
+    <!-- Door -->
+    <rect x="285" y="240" width="30" height="40"/>
+    <!-- Window -->
+    <rect x="315" y="210" width="20" height="20"/>
+  </g>
+
+  <!-- Sun -->
+  <g class="primary-color">
+    <circle cx="300" cy="130" r="20"/>
+    <!-- Sun rays -->
+    <g stroke="#2E7D32" stroke-width="4">
+      <line x1="300" y1="100" x2="300" y2="110"/>
+      <line x1="270" y1="130" x2="280" y2="130"/>
+      <line x1="320" y1="130" x2="330" y2="130"/>
+    </g>
+  </g>
+
+  <!-- Text -->
+  <g transform="translate(0, 50)">
+    <text x="300" y="400" 
+          class="logo-text primary-color" 
+          text-anchor="middle" 
+          font-size="72" 
+          font-weight="bold">PRAKRUTHI</text>
+    <text x="300" y="460" 
+          class="logo-text primary-color" 
+          text-anchor="middle" 
+          font-size="48">HOME STAY</text>
+    <text x="300" y="510" 
+          class="tagline primary-color" 
+          text-anchor="middle" 
+          font-size="32">Relax. Refresh. Reconnect.</text>
+  </g>
+</svg>

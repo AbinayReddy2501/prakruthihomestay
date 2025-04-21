@@ -1,0 +1,217 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F5F5F5;
+  color: #1C2833;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2E7D32;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1B5E20;
+}
+
+/* Common utility classes */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-success {
+  color: #2E7D32;
+}
+
+.text-error {
+  color: #D32F2F;
+}
+
+.text-warning {
+  color: #FFA000;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Card hover effects */
+.hover-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+}
+
+/* Button hover effects */
+.btn-hover-effect {
+  transition: transform 0.2s ease;
+}
+
+.btn-hover-effect:hover {
+  transform: translateY(-2px);
+}
+
+/* Image styles */
+.img-responsive {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-rounded {
+  border-radius: 8px;
+}
+
+/* Layout utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.section {
+  padding: 48px 0;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #1C2833;
+}
+
+/* Calendar styles */
+.calendar-day {
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.calendar-day.available {
+  background-color: #E8F5E9;
+}
+
+.calendar-day.booked {
+  background-color: #FFEBEE;
+}
+
+/* Dashboard card styles */
+.dashboard-card {
+  border-radius: 12px;
+  padding: 24px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Status indicators */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-badge.success {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+}
+
+.status-badge.warning {
+  background-color: #FFF3E0;
+  color: #F57C00;
+}
+
+.status-badge.error {
+  background-color: #FFEBEE;
+  color: #D32F2F;
+}
+
+/* Price display */
+.price-display {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2E7D32;
+}
+
+/* Amenity icons */
+.amenity-icon {
+  color: #2E7D32;
+  margin-right: 8px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 960px) {
+  .section {
+    padding: 32px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 24px 0;
+  }
+}

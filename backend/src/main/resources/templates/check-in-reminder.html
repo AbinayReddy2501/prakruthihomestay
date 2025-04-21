@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: html}">
+<body>
+    <div th:fragment="content">
+        <h2>Check-in Reminder</h2>
+        <p>Dear <span th:text="${guestName}"></span>,</p>
+        
+        <p>We're looking forward to welcoming you to Prakruthi Homestay tomorrow!</p>
+        
+        <div class="info-box">
+            <h3>Check-in Information</h3>
+            <p><strong>Date:</strong> <span th:text="${checkInDate}"></span></p>
+            <p><strong>Time:</strong> <span th:text="${checkInTime}"></span></p>
+            <p><strong>Address:</strong> <span th:text="${address}"></span></p>
+            <p><strong>Contact:</strong> <span th:text="${contactNumber}"></span></p>
+        </div>
+
+        <div class="info-box">
+            <h3>What to Bring</h3>
+            <ul>
+                <li>Government-issued photo ID (mandatory for check-in)</li>
+                <li>Booking confirmation email</li>
+                <li>Credit/debit card used for booking (if applicable)</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Villa Amenities</h3>
+            <ul>
+                <li>Fully equipped kitchen</li>
+                <li>Free Wi-Fi</li>
+                <li>Air conditioning</li>
+                <li>Fresh linens and towels</li>
+                <li>Parking space</li>
+            </ul>
+        </div>
+
+        <p>Please note:</p>
+        <ul>
+            <li>Early check-in is subject to availability</li>
+            <li>Please inform us in advance if you'll be arriving after 6:00 PM</li>
+            <li>Pets are not allowed in the property</li>
+        </ul>
+
+        <p>Need directions or have questions? Feel free to contact us at <span th:text="${contactNumber}"></span>.</p>
+        
+        <p>We look forward to providing you with a comfortable stay!</p>
+        
+        <p>Best regards,<br>Team Prakruthi Homestay</p>
+    </div>
+</body>
+</html>

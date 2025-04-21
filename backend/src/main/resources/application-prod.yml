@@ -1,0 +1,75 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://prakruthi:Prakruthi1234@cluster0.kahoetc.mongodb.net/prakruthi_homestay
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /api
+  error:
+    include-message: always
+  ssl:
+    enabled: true
+    key-store: /etc/letsencrypt/live/yourdomain.com/keystore.p12
+    key-store-password: ${SSL_PASSWORD}
+    key-store-type: PKCS12
+
+resend:
+  api:
+    key: re_MvptJ5X3_FS7xQWG1rZLUFkGtBCtuVkCh
+
+razorpay:
+  key:
+    id: rzp_test_Nb4Z9WyKMSAjzu
+    secret: cWLTHGXQ0h7sYckARPHYEkCJ
+
+jwt:
+  secret: ${JWT_SECRET:prakruthi_homestay_secret_key_2024_secure_jwt_token}
+  expiration: 86400000
+
+app:
+  cors:
+    allowed-origins: 
+      - https://prakruthi.vercel.app
+      - https://prakruthi.srinovatech.site
+  email:
+    from: onboarding@resend.dev
+    name: Prakruthi Homestay
+  booking:
+    check-in-time: "13:00"
+    check-out-time: "11:00"
+    min-advance-days: 1
+    max-advance-days: 90
+    base-price: 5000
+  cancellation:
+    free-days: 7
+    partial-refund-days: 3
+    partial-refund-percentage: 50
+  villa:
+    max-guests: 6
+    min-stay: 1
+    max-stay: 30
+
+logging:
+  file:
+    name: /var/log/prakruthi-homestay/application.log
+  level:
+    root: INFO
+    com.prakruthi.homestay: INFO
+    org.springframework.security: INFO

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .logo-text { font-family: serif; fill: #2E7D32; }
+    .tagline { font-family: serif; font-style: italic; fill: #2E7D32; }
+  </style>
+  <g transform="translate(50, 50)">
+    <!-- Arch with house and trees -->
+    <path d="M200,0 
+             A200,200 0 0,1 200,400 
+             A200,200 0 0,1 200,0" 
+          fill="none" 
+          stroke="#2E7D32" 
+          stroke-width="4"/>
+    
+    <!-- House -->
+    <path d="M150,150 L250,150 L200,100 Z" fill="#2E7D32"/>
+    <rect x="160" y="150" width="80" height="80" fill="#2E7D32"/>
+    
+    <!-- Trees -->
+    <path d="M100,180 C100,140 120,120 140,180 Z" fill="#2E7D32"/>
+    <rect x="130" y="180" width="10" height="30" fill="#2E7D32"/>
+    
+    <path d="M260,180 C260,140 280,120 300,180 Z" fill="#2E7D32"/>
+    <rect x="290" y="180" width="10" height="30" fill="#2E7D32"/>
+    
+    <!-- Sun -->
+    <circle cx="200" cy="80" r="20" fill="#2E7D32"/>
+    <line x1="200" y1="40" x2="200" y2="60" stroke="#2E7D32" stroke-width="4"/>
+    <line x1="160" y1="80" x2="180" y2="80" stroke="#2E7D32" stroke-width="4"/>
+    <line x1="220" y1="80" x2="240" y2="80" stroke="#2E7D32" stroke-width="4"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="250" y="350" class="logo-text" text-anchor="middle" font-size="48">PRAKRUTHI</text>
+  <text x="250" y="400" class="logo-text" text-anchor="middle" font-size="36">HOME STAY</text>
+  <text x="250" y="440" class="tagline" text-anchor="middle" font-size="24">Relax. Refresh. Reconnect.</text>
+</svg>

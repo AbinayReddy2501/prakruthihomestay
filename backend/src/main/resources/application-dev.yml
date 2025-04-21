@@ -1,0 +1,34 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://prakruthi:Prakruthi1234@cluster0.kahoetc.mongodb.net/prakruthi_homestay
+
+razorpay:
+  key:
+    id: rzp_test_your_key_id
+    secret: rzp_test_your_key_secret
+
+jwt:
+  secret: prakruthi_homestay_secret_key_2024_secure_jwt_token
+  expiration: 86400000 # 24 hours
+
+app:
+  cors:
+    allowed-origins: http://localhost:3000
+  email:
+    from: noreply@prakruthihomestay.com
+    name: Prakruthi Homestay
+  booking:
+    check-in-time: "13:00"
+    check-out-time: "11:00"
+    min-advance-days: 1
+    max-advance-days: 90
+    base-price: 5000
+  cancellation:
+    free-days: 7
+    partial-refund-days: 3
+    partial-refund-percentage: 50
+  villa:
+    max-guests: 6
+    min-stay: 1
+    max-stay: 30
