@@ -1,11 +1,12 @@
 services:
   - type: web
     name: prakruthi-homestay-api
-    env: java
+    env: docker
     region: singapore
     plan: free
-    buildCommand: ./mvnw package -DskipTests
-    startCommand: java -jar target/*.jar
+    branch: main
+    dockerfilePath: ./backend/Dockerfile
+    healthCheckPath: /api/health
     envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
