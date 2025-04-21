@@ -5,6 +5,8 @@ services:
     region: singapore
     plan: free
     healthCheckPath: /api/health
+    buildCommand: "mvn clean package -DskipTests"
+    startCommand: "java -jar target/*.jar"
     envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
@@ -18,5 +20,5 @@ services:
         value: cWLTHGXQ0h7sYckARPHYEkCJ
       - key: RESEND_API_KEY
         value: re_MvptJ5X3_FS7xQWG1rZLUFkGtBCtuVkCh
-    buildCommand: ./mvnw package -DskipTests
-    startCommand: java -jar -Dspring.profiles.active=prod target/*.jar
+      - key: PORT
+        value: 8080

@@ -1,0 +1,18 @@
+[phases.setup]
+nixPkgs = [
+    "maven",
+    "jdk17"
+]
+
+[phases.install]
+cmds = [
+    "mvn dependency:go-offline"
+]
+
+[phases.build]
+cmds = [
+    "mvn clean package -DskipTests"
+]
+
+[start]
+cmd = "java -jar target/*.jar"

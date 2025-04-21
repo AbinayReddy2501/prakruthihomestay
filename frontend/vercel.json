@@ -9,7 +9,7 @@
     }
   ],
   "env": {
-    "REACT_APP_API_URL": "https://api.prakruthi.srinovatech.site/api",
+    "REACT_APP_API_URL": "https://prakruthi-homestay-production.up.railway.app/api",
     "REACT_APP_RAZORPAY_KEY_ID": "rzp_test_Nb4Z9WyKMSAjzu"
   },
   "headers": [

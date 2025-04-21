@@ -27,28 +27,10 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
-    const originalRequest = error.config;
-
-    // If the error status is 401 and there is no originalRequest._retry flag,
-    // it means the token has expired and we need to refresh it
-    if (error.response.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true;
-
-      try {
-        const token = localStorage.getItem('token');
-        if (!token) {
-          store.dispatch(logout());
-          window.location.href = '/login';
-          return Promise.reject(error);
-        }
-
-        // Redirect to login if token refresh fails
-        store.dispatch(logout());
-        window.location.href = '/login';
-        return Promise.reject(error);
-      } catch (error) {
-        return Promise.reject(error);
-      }
+    if (error.response?.status === 401) {
+      // Clear token and redirect to login
+      localStorage.removeItem('token');
+      window.location.href = '/login';
     }
     return Promise.reject(error);
   }
