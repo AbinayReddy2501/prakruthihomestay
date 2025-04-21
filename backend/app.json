@@ -1,0 +1,33 @@
+{
+  "name": "prakruthi-homestay-api",
+  "description": "Prakruthi Homestay Backend API",
+  "keywords": ["java", "spring-boot", "homestay"],
+  "addons": [
+    "jawsdb"
+  ],
+  "env": {
+    "SPRING_PROFILES_ACTIVE": {
+      "value": "prod"
+    },
+    "JWT_SECRET": {
+      "value": "prakruthi_homestay_secret_key_2024_secure_jwt_token"
+    },
+    "MONGODB_URI": {
+      "value": "mongodb+srv://prakruthi:Prakruthi1234@cluster0.kahoetc.mongodb.net/prakruthi_homestay"
+    },
+    "RAZORPAY_KEY_ID": {
+      "value": "rzp_test_Nb4Z9WyKMSAjzu"
+    },
+    "RAZORPAY_KEY_SECRET": {
+      "value": "cWLTHGXQ0h7sYckARPHYEkCJ"
+    },
+    "RESEND_API_KEY": {
+      "value": "re_MvptJ5X3_FS7xQWG1rZLUFkGtBCtuVkCh"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/java"
+    }
+  ]
+}
