@@ -2,6 +2,7 @@ app = "prakruthi-homestay-api"
 
 [build]
 builder = "nixpacks"
+buildCommand = "./build.sh"
 
 [deploy]
 startCommand = "java -jar target/*.jar"
@@ -12,12 +13,19 @@ restartPolicyType = "ON_FAILURE"
 [env]
 SPRING_PROFILES_ACTIVE = "prod"
 PORT = "8080"
+JAVA_TOOL_OPTIONS = "-XX:MaxRAMPercentage=75.0"
 NIXPACKS_JDK_VERSION = "17"
 
 [[build.steps]]
-name = "Install Maven"
-command = "apt-get update && apt-get install -y maven"
+name = "Setup Java"
+command = """
+apt-get update && \
+apt-get install -y openjdk-17-jdk maven && \
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 && \
+export PATH=$JAVA_HOME/bin:$PATH && \
+mvn --version
+"""
 
 [[build.steps]]
-name = "Build with Maven"
+name = "Build Application"
 command = "mvn clean package -DskipTests"
