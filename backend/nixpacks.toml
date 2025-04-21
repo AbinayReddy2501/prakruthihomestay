@@ -1,7 +1,7 @@
 [phases.setup]
-nixPkgs = [
-    "maven",
-    "jdk17"
+aptPkgs = [
+    "default-jdk",
+    "maven"
 ]
 
 [phases.install]
@@ -16,3 +16,7 @@ cmds = [
 
 [start]
 cmd = "java -jar target/*.jar"
+
+[variables]
+JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
+MAVEN_OPTS = "-Xmx512m"

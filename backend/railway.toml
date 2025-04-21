@@ -1,6 +1,7 @@
+app = "prakruthi-homestay-api"
+
 [build]
-builder = "JAVA"
-buildCommand = "mvn clean package -DskipTests"
+builder = "nixpacks"
 
 [deploy]
 startCommand = "java -jar target/*.jar"
@@ -11,19 +12,12 @@ restartPolicyType = "ON_FAILURE"
 [env]
 SPRING_PROFILES_ACTIVE = "prod"
 PORT = "8080"
+NIXPACKS_JDK_VERSION = "17"
 
-[[phases.setup]]
-nixPkgs = [
-    "maven",
-    "openjdk-17-jdk"
-]
+[[build.steps]]
+name = "Install Maven"
+command = "apt-get update && apt-get install -y maven"
 
-[[phases.install]]
-cmds = [
-    "mvn dependency:go-offline"
-]
-
-[[phases.build]]
-cmds = [
-    "mvn clean package -DskipTests"
-]
+[[build.steps]]
+name = "Build with Maven"
+command = "mvn clean package -DskipTests"
