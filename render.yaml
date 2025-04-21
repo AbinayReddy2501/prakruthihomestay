@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: prakruthi-homestay-api
+    env: docker
+    region: singapore
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: JWT_SECRET
+        value: prakruthi_homestay_secret_key_2024_secure_jwt_token
+      - key: MONGODB_URI
+        value: mongodb+srv://prakruthi:Prakruthi1234@cluster0.kahoetc.mongodb.net/prakruthi_homestay
+      - key: RAZORPAY_KEY_ID
+        value: rzp_test_Nb4Z9WyKMSAjzu
+      - key: RAZORPAY_KEY_SECRET
+        value: cWLTHGXQ0h7sYckARPHYEkCJ
+      - key: RESEND_API_KEY
+        value: re_MvptJ5X3_FS7xQWG1rZLUFkGtBCtuVkCh
+    buildCommand: ./mvnw package -DskipTests
+    startCommand: java -jar -Dspring.profiles.active=prod target/*.jar
